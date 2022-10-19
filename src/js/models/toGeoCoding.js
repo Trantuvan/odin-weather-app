@@ -1,17 +1,17 @@
 export default class GeoCoding {
   constructor([
     {
-      local_names: { feature_name: geoName = '' },
-      lat = 0,
-      lon = 0,
-      country = '',
-      state = '',
+      local_names: { feature_name: geoName },
+      lat,
+      lon,
+      country,
+      state,
     },
   ]) {
-    this.name = geoName;
-    this.latitude = lat;
-    this.longitude = lon;
-    this.country = country;
-    this.state = state;
+    this.name = geoName || '';
+    this.latitude = lat || 0;
+    this.longitude = lon || 0;
+    this.country = country || '';
+    this.state = state || '';
   }
 }
