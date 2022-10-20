@@ -1,15 +1,15 @@
-// *top level handleError, only catch 404 error right now
+// *top level handleError => log error to console
+// *catch error from promise is being rejected (server error)
+// *catch error being throw from fulfillment but response.status !== 200
 const handleError =
   (fn) =>
   (...params) =>
     fn(...params).catch((err) => {
-      if (err.status === 404) {
-        // render error page
-        console.log('page not found');
-      }
+      // *this err object here contains 2 properties
+      // *message and stacktrace
+      // *message come from new Error instance throw by fetch
+      // *or err from weather api itself
 
-      // catch other errors than 404
-      // include error if promise not resolved
       console.log('Oops! Something went wrong', err);
     });
 
