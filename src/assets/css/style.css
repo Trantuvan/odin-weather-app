@@ -30,13 +30,13 @@ html {
   line-height: 1.4;
 }
 
-body {
+/* body {
   display: flex;
   background: linear-gradient(236deg, var(--cyan-800), var(--green-800));
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 img {
   aspect-ratio: 1/1;
