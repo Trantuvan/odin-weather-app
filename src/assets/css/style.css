@@ -4,6 +4,10 @@
  */
 :root {
   /* global variables */
+  --background-color: hsl(203, 82%, 13%);
+  --card-background-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 0%);
+  --search-btn-color: hsl(197, 100%, 94%);
 }
 
 /*******************
@@ -16,15 +20,69 @@ html {
   line-height: 1.4;
 }
 
-/* body {
+body {
   display: flex;
-  background: linear-gradient(236deg, var(--cyan-800), var(--green-800));
+  background: var(--background-color);
   justify-content: center;
   align-items: center;
   height: 100vh;
-} */
+}
 
 img {
   aspect-ratio: 1/1;
   object-fit: contain;
+}
+
+/* card */
+.card {
+  background-color: var(--card-background-color);
+  width: min(40rem, 100%);
+  height: min(10.5rem, 100%);
+  border-radius: 18px;
+  padding: 2.8em 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form {
+  display: flex;
+  gap: 1em;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.location-icon {
+  font-size: 2.8rem;
+  color: var(--background-color);
+}
+
+input[type='search'] {
+  width: 90%;
+  border: none;
+  color: var(--background-color);
+  font-size: 2.4rem;
+  font-weight: 400;
+  padding: 0.5rem;
+}
+
+.search-btn {
+  border: none;
+  color: var(--background-color);
+  background-color: var(--search-btn-color);
+  font-size: 2.2rem;
+  border-radius: 50%;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--background-color);
+  color: var(--card-background-color);
 }
