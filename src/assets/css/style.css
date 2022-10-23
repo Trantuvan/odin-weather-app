@@ -6,7 +6,6 @@
   /* global variables */
   --background-color: hsl(203, 82%, 13%);
   --card-background-color: hsl(0, 0%, 100%);
-  --text-color: hsl(0, 0%, 0%);
   --search-btn-color: hsl(197, 100%, 94%);
   --error-color: hsl(350, 89%, 59%);
 }
@@ -108,6 +107,38 @@ input[type='search'] {
 .not-found p {
   color: var(--card-background);
   font-size: 2.2em;
+  font-weight: 400;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  scale: 0;
+  opacity: 0;
+}
+
+.weather-container img {
+  width: 60%;
+}
+
+.temperature {
+  color: var(--background-color);
+  font-size: 5rem;
+  font-weight: 800;
+  position: relative;
+}
+
+.temperature > span {
+  position: absolute;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.description {
+  color: var(--background-color);
+  font-size: 2.2rem;
   font-weight: 400;
 }
 
