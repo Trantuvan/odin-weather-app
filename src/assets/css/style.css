@@ -92,7 +92,39 @@ input[type='search'] {
   color: var(--card-background-color);
 }
 
+.not-found {
+  display: flex;
+  gap: 1.2em;
+  flex-direction: column;
+  align-items: center;
+  scale: 0;
+  opacity: 0;
+}
+
+.not-found img {
+  width: 70%;
+}
+
+.not-found p {
+  color: var(--card-background);
+  font-size: 2.2em;
+  font-weight: 400;
+}
+
 /* utils */
 .disabled {
   display: none;
+}
+
+/* animation */
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
 }
