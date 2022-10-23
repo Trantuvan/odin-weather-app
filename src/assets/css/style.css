@@ -3,21 +3,7 @@
  * ---------------
  */
 :root {
-  --green-800: #166534;
-  --green-900: #14532d;
-
-  --emerald-300: #6ee7b7;
-  --emerald-500: #22c55e;
-  --emerald-700: #047857;
-  --emerald-800: #065f46;
-  --emerald-900: #064e3b;
-
-  --cyan-800: #155e75;
-  --cyan-900: #164e63;
-
-  --slate-200: #e2e8f0;
-
-  --rose-500: #f43f5e;
+  /* global variables */
 }
 
 /*******************
@@ -26,7 +12,7 @@
 html {
   font-size: 62.5%;
   font-weight: 300;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.4;
 }
 
