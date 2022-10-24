@@ -28,7 +28,8 @@ body {
   height: 100vh;
 }
 
-img {
+img,
+i {
   aspect-ratio: 1/1;
   object-fit: contain;
 }
@@ -40,6 +41,7 @@ img {
   border-radius: 18px;
   padding: 2.8em 3em;
   display: grid;
+  gap: 5rem;
 }
 
 #form {
@@ -140,6 +142,44 @@ input[type='search'] {
   color: var(--background-color);
   font-size: 2.2rem;
   font-weight: 400;
+}
+
+.weather-details {
+  display: flex;
+  gap: 4rem;
+  justify-content: space-around;
+  align-items: center;
+  scale: 0;
+  opacity: 0;
+}
+
+.humidity,
+.wind {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.humidity i,
+.wind i {
+  color: var(--background-color);
+  font-size: 2.6rem;
+}
+
+.humidity .text,
+.wind .text {
+  color: var(--background-color);
+  font-weight: 500;
+}
+
+.humidity span,
+.wind span {
+  font-size: 2.2rem;
+}
+
+.humidity p,
+.wind p {
+  font-size: 1.4rem;
 }
 
 /* utils */
