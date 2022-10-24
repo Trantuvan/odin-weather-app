@@ -11,6 +11,7 @@ import Logo from '../assets/img/favicon.png';
 import changeFavicon from './utils/changeFavicon';
 import FetchAsync from './utils/fetchAsync';
 import handleError from './utils/handlePromiseError';
+import GeoCoding from './models/toGeoCoding';
 
 (() => {
   changeFavicon(Logo);
@@ -36,8 +37,13 @@ import handleError from './utils/handlePromiseError';
       return undefined;
     }
 
-    handleError(FetchAsync.getGeographicPosition)(cityName).then((data) =>
-      console.log('data', data)
-    );
+    handleError(FetchAsync.getGeographicPosition)(cityName).then((data) => {
+      if (data !== undefined) {
+        console.log('data index', data);
+        const geo = new GeoCoding(data);
+        console.log('geo', geo);
+        return geo;
+      }
+    });
   });
 })();
