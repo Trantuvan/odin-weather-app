@@ -56,6 +56,12 @@ i {
   color: var(--background-color);
 }
 
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
 input[type='search'] {
   width: 95%;
   border: none;

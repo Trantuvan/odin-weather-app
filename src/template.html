@@ -22,17 +22,19 @@
         <label for="search">
           <i class="fa-solid fa-location-pin location-icon"></i>
         </label>
-        <input
-          type="search"
-          name="cityName"
-          id="search"
-          placeholder="Enter Your Location"
-        />
+        <div class="form-control">
+          <input
+            type="search"
+            name="cityName"
+            id="search"
+            placeholder="Enter Your Location"
+          />
+          <div class="form-message disabled">* Not Found</div>
+        </div>
         <button type="submit" class="search-btn">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
-      <div class="form-message disabled">* Not Found</div>
       <div class="not-found fadeIn disabled">
         <img src="./assets/img/404.png" alt="not-found" />
         <p>Oops! Invalid Location :/</p>
