@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/0ca448d555.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  <script defer src="bundlee2ffa6b46c36d5bf1e40.js"></script></head>
+  <body>
+    <div class="card">
+      <form id="form">
+        <label for="search">
+          <i class="fa-solid fa-location-pin location-icon"></i>
+        </label>
+        <div class="form-control">
+          <input
+            type="search"
+            name="cityName"
+            id="search"
+            placeholder="Enter Your Location"
+          />
+          <div class="form-message disabled">* Not Found</div>
+        </div>
+        <button type="submit" class="search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div class="not-found fadeIn disabled">
+        <img src="images/a5dd8a41fc4587a417ec..png" alt="not-found" />
+        <p>Oops! Invalid Location :/</p>
+      </div>
+      <div class="weather-container fadeIn disabled">
+        <img src="images/1eb7082e2e6ec7f2d01e..png" alt="clear" />
+        <p class="temperature">22 <span>°C</span></p>
+        <p class="description">Clear Sky</p>
+      </div>
+      <div class="weather-details fadeIn disabled">
+        <div class="humidity">
+          <i class="fa-solid fa-water"></i>
+          <div class="text">
+            <span>50%</span>
+            <p>Humidity</p>
+          </div>
+        </div>
+        <div class="wind">
+          <i class="fa-solid fa-wind"></i>
+          <div class="text">
+            <span>5 m/s</span>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
