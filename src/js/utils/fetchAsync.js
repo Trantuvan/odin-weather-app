@@ -1,3 +1,5 @@
+import NotFoundView from '../views/notFoundView';
+
 export default class FetchAsync {
   static getGeographicPosition(cityName) {
     const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=3cc1ca6174214347ed3e915656a6c1dd`;
@@ -25,7 +27,9 @@ export default class FetchAsync {
       .catch((err) => {
         if (err.message === 'empty array') {
           // *call dom to handle 404 status
-          console.log('fetchAsync not found', err);
+          NotFoundView.renderNotFound();
+          // *remove notFoundView after 3s
+          NotFoundView.removeNotFound(3000);
         }
       });
   }
