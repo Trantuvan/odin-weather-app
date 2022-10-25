@@ -4,10 +4,4 @@ export default class NotFoundView {
   static renderNotFound() {
     this.#notFound.classList.remove('disabled');
   }
-
-  static removeNotFound(time) {
-    setTimeout(() => {
-      this.#notFound.classList.add('disabled');
-    }, time);
-  }
 }

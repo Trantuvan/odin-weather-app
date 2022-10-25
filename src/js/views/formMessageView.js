@@ -5,11 +5,4 @@ export default class FormMessageView {
     this.#errorMessage.textContent = message;
     this.#errorMessage.classList.remove('disabled');
   }
-
-  static removeErrorMessage(time) {
-    setTimeout(() => {
-      this.#errorMessage.textContent = '';
-      this.#errorMessage.classList.add('disabled');
-    }, time);
-  }
 }

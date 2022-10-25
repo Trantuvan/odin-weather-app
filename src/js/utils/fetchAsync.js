@@ -28,8 +28,6 @@ export default class FetchAsync {
         if (err.message === 'empty array') {
           // *call dom to handle 404 status
           NotFoundView.renderNotFound();
-          // *remove notFoundView after 3s
-          NotFoundView.removeNotFound(3000);
         }
       });
   }
