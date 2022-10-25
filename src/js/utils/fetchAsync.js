@@ -15,13 +15,13 @@ export default class FetchAsync {
         // *check for empty array
         if (Array.isArray(data) && data.length === 0) {
           console.log('empty array', data);
-          const err = new Error('not found');
+          const err = new Error('empty array');
           throw err;
         }
         return data;
       })
       .catch((err) => {
-        if (err.message === 'not found') {
+        if (err.message === 'empty array') {
           // *call dom to handle 404 status
           console.log('fetchAsync not found', err);
         }
