@@ -1,16 +1,12 @@
 export default class FormMessageView {
-  #errorMessage;
+  static #errorMessage = document.querySelector('.form-message');
 
-  constructor() {
-    this.#errorMessage = document.querySelector('.form-message');
-  }
-
-  setErrorMessage(message = '') {
+  static setErrorMessage(message = '') {
     this.#errorMessage.textContent = message;
     this.#errorMessage.classList.remove('disabled');
   }
 
-  removeErrorMessage(time) {
+  static removeErrorMessage(time) {
     setTimeout(() => {
       this.#errorMessage.textContent = '';
       this.#errorMessage.classList.add('disabled');
