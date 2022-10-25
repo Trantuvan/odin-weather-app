@@ -26,7 +26,6 @@ export default class WeatherController {
     handleError(FetchAsync.getCurrentWeatherData)(lat, lon)
       .then((data) => {
         const weather = new Weather(data);
-        console.log('weather', weather);
         return weather;
       })
       .then((weather) => WeatherDetailsView.renderDetails(weather));
