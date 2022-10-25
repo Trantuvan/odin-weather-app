@@ -30,11 +30,10 @@ export default class FetchAsync {
       });
   }
 
-  static getCurrentWeatherData({ lat = 0, lon = 0, units = 'metric' }) {
+  static getCurrentWeatherData(lat = 0, lon = 0, units = 'metric') {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=3cc1ca6174214347ed3e915656a6c1dd`;
 
     return fetch(url, { mode: 'cors', method: 'GET' }).then((response) => {
-      console.log('fetch response', response);
       if (response.ok !== true) {
         const err = new Error(response.status);
         throw err;

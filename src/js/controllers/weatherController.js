@@ -2,8 +2,11 @@ import FetchAsync from '../utils/fetchAsync';
 import handleError from '../utils/handlePromiseError';
 import GeoCoding from '../models/toGeoCoding';
 import Weather from '../models/weather';
+import WeatherDetailsView from '../views/weatherDetailsView';
 
 export default class WeatherController {
+  // *need to return handleError as a promise here
+  // *resolve value will be chain to create weatherObj
   static convertCityNameToGeoGraphic(cityName) {
     return handleError(FetchAsync.getGeographicPosition)(cityName).then(
       (data) => {
@@ -18,14 +21,14 @@ export default class WeatherController {
     );
   }
 
+  // *doesn't need to return, this will take weatherObj to render dom
   static getWeatherInfo({ lat, lon }) {
-    return handleError(FetchAsync.getCurrentWeatherData)(lat, lon).then(
-      (data) => {
-        console.log('data weather', data);
+    handleError(FetchAsync.getCurrentWeatherData)(lat, lon)
+      .then((data) => {
         const weather = new Weather(data);
-        console.log('weatherObj', weather);
+        console.log('weather', weather);
         return weather;
-      }
-    );
+      })
+      .then((weather) => WeatherDetailsView.renderDetails(weather));
   }
 }
