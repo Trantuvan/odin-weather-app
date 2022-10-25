@@ -18,6 +18,8 @@ export default class FetchAsync {
           const err = new Error('empty array');
           throw err;
         }
+        // *return real data if empty array false
+        // *return undefined if empty array true
         return data;
       })
       .catch((err) => {

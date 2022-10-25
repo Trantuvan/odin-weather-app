@@ -9,9 +9,7 @@ import Logo from '../assets/img/favicon.png';
 
 // JS
 import changeFavicon from './utils/changeFavicon';
-import FetchAsync from './utils/fetchAsync';
-import handleError from './utils/handlePromiseError';
-import GeoCoding from './models/toGeoCoding';
+import WeatherController from './controllers/weatherController';
 import FormMessageView from './views/formMessageView';
 
 (() => {
@@ -34,13 +32,6 @@ import FormMessageView from './views/formMessageView';
       return undefined;
     }
 
-    handleError(FetchAsync.getGeographicPosition)(cityName).then((data) => {
-      if (data !== undefined) {
-        console.log('data index', data);
-        const geo = new GeoCoding(data);
-        console.log('geo', geo);
-        return geo;
-      }
-    });
+    const geoCoding = WeatherController.convertCityNameToGeoGraphic(cityName);
   });
 })();
