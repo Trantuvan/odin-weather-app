@@ -6,7 +6,6 @@ export default class FetchAsync {
 
     return fetch(url, { mode: 'cors', method: 'GET' })
       .then((response) => {
-        console.log('response', response);
         if (response.ok !== true) {
           const err = new Error(response.status);
           throw err;
@@ -16,7 +15,6 @@ export default class FetchAsync {
       .then((data) => {
         // *check for empty array
         if (Array.isArray(data) && data.length === 0) {
-          console.log('empty array', data);
           const err = new Error('empty array');
           throw err;
         }
@@ -36,11 +34,12 @@ export default class FetchAsync {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=3cc1ca6174214347ed3e915656a6c1dd`;
 
     return fetch(url, { mode: 'cors', method: 'GET' }).then((response) => {
+      console.log('fetch response', response);
       if (response.ok !== true) {
         const err = new Error(response.status);
         throw err;
       }
-      response.json();
+      return response.json();
     });
   }
 }

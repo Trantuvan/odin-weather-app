@@ -33,6 +33,12 @@ import FormMessageView from './views/formMessageView';
       return undefined;
     }
 
-    const geoCoding = WeatherController.convertCityNameToGeoGraphic(cityName);
+    // *need to call controllers in promise too
+    WeatherController.convertCityNameToGeoGraphic(cityName).then((geo) => {
+      WeatherController.getWeatherInfo({
+        lat: geo.latitude,
+        lon: geo.longitude,
+      });
+    });
   });
 })();
