@@ -12,6 +12,7 @@ import changeFavicon from './utils/changeFavicon';
 import FetchAsync from './utils/fetchAsync';
 import handleError from './utils/handlePromiseError';
 import GeoCoding from './models/toGeoCoding';
+import FormMessageView from './views/formMessageView';
 
 (() => {
   changeFavicon(Logo);
@@ -25,14 +26,11 @@ import GeoCoding from './models/toGeoCoding';
 
     // *check for empty string and whitespaces
     if (cityName.trim().length === 0) {
-      const errorMessage = document.querySelector('.form-message');
-      errorMessage.textContent = '* Required properly city name';
-      errorMessage.classList.remove('disabled');
+      const errorMessage = new FormMessageView();
+      errorMessage.setErrorMessage('* Required properly city name');
 
       // *remove error message
-      setTimeout(() => {
-        errorMessage.classList.add('disabled');
-      }, 3000);
+      errorMessage.removeErrorMessage(3000);
 
       return undefined;
     }
