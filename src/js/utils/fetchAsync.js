@@ -2,7 +2,7 @@ import NotFoundView from '../views/notFoundView';
 
 export default class FetchAsync {
   static getGeographicPosition(cityName) {
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=3cc1ca6174214347ed3e915656a6c1dd`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=3cc1ca6174214347ed3e915656a6c1dd`;
 
     return fetch(url, { mode: 'cors', method: 'GET' })
       .then((response) => {
